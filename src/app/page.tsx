@@ -402,7 +402,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section className="projects-section py-20 px-4">
+      {/* <section className="projects-section py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <SplitText
@@ -449,7 +449,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact Section */}
       <section className="contact-section py-20 px-4 bg-black/20 backdrop-blur-sm">
@@ -468,39 +468,30 @@ export default function Home() {
             splitType="words"
           />
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <MagneticButton strength={0.3}>
               <a 
                 href="mailto:diassnorrman@gmail.com" 
-                className="group relative hover-card px-8 py-4 bg-gradient-to-br from-purple-600/90 to-pink-600/90 hover:from-purple-500 hover:to-pink-500 text-white rounded-xl transition-all duration-500 font-semibold shadow-lg hover:shadow-purple-500/30 border border-purple-400/20 hover:border-purple-300/50"
+                className="group relative hover-card px-8 py-4 bg-gradient-to-br from-slate-800/80 via-purple-800/80 to-slate-900/80 hover:from-slate-700/90 hover:via-purple-700/90 hover:to-slate-800/90 text-white rounded-xl transition-all duration-500 font-semibold shadow-lg hover:shadow-purple-500/20 border border-white/10 hover:border-purple-300/30"
               >
                 <span className="relative z-10">Get In Touch</span>
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/0 to-white/0 group-hover:from-white/10 group-hover:to-white/5 transition-all duration-500"></div>
-              </a>
-            </MagneticButton>
-            <MagneticButton strength={0.3}>
-              <a 
-                href="#" 
-                className="group relative hover-card px-8 py-4 bg-gradient-to-br from-slate-800/80 to-slate-900/80 hover:from-slate-700/80 hover:to-slate-800/80 text-white rounded-xl transition-all duration-500 font-semibold border border-white/20 hover:border-white/40 backdrop-blur-sm shadow-lg hover:shadow-slate-500/20"
-              >
-                <span className="relative z-10">Download CV</span>
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/0 to-white/0 group-hover:from-white/5 group-hover:to-white/10 transition-all duration-500"></div>
               </a>
             </MagneticButton>
-          </div>
+          </div> */}
         </div>
-      </section>
 
-      {/* Footer */}
-      <footer className="py-8 px-4 border-t border-white/10">
-        <div className="max-w-6xl mx-auto text-center">
-          <ShinyText
-            text="© 2025 Dias Norman. All rights reserved."
-            className="text-gray-400"
-            speed={6}
-          />
-        </div>
-      </footer>
+        {/* Footer */}
+        <footer className="px-4 mt-32">
+          <div className="max-w-6xl mx-auto text-center">
+            <ShinyText
+              text="© 2025 Dias Norman. All rights reserved."
+              className="text-gray-400"
+              speed={6}
+            />
+          </div>
+        </footer>
+      </section>
       </div>
     </>
   );
