@@ -45,6 +45,19 @@ export default function Home() {
   const [projects, setProjects] = useState<Project[]>([])
   const [isLoading, setIsLoading] = useState(true)
 
+  // Helper function to format date or handle "Now"/"Present"
+  const formatDate = (dateString: string): string => {
+    const lowerCase = dateString.toLowerCase()
+    if (lowerCase === 'now' || lowerCase === 'present') {
+      return 'Present'
+    }
+    try {
+      return new Date(dateString).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
+    } catch {
+      return dateString // fallback to original string if date parsing fails
+    }
+  }
+
   // Fetch API data
   useEffect(() => {
     const fetchData = async () => {
@@ -431,7 +444,7 @@ export default function Home() {
                 </Link>
               </MagneticButton>
             </div>
-            <ShinyText text="Last updated September 6, 2025" className="text-sm mt-4 text-gray-400" />
+            <ShinyText text="Last updated September 7, 2025" className="text-sm mt-4 text-gray-400" />
           </div>
 
           {/* Scroll indicator */}
@@ -592,11 +605,15 @@ export default function Home() {
                         <Calendar className="w-4 h-4" />
                         <div className="flex lg:items-end items-center justify-center gap-2">
                           <span className="text-sm font-medium">
-                            {new Date(exp.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                            {formatDate(exp.startDate)}
                           </span>
                           <span className="text-sm text-gray-500">-</span>
-                          <span className="text-sm font-medium">
-                            {new Date(exp.endDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                          <span className={`text-sm font-medium ${
+                            exp.endDate.toLowerCase() === 'present' || exp.endDate.toLowerCase() === 'now' 
+                              ? 'text-green-400 font-semibold' 
+                              : ''
+                          }`}>
+                            {formatDate(exp.endDate)}
                           </span>
                         </div>
                       </div>
