@@ -608,11 +608,10 @@ export default function Home() {
                             {formatDate(exp.startDate)}
                           </span>
                           <span className="text-sm text-gray-500">-</span>
-                          <span className={`text-sm font-medium ${
-                            exp.endDate.toLowerCase() === 'present' || exp.endDate.toLowerCase() === 'now' 
-                              ? 'text-green-400 font-semibold' 
+                          <span className={`text-sm font-medium ${exp.endDate.toLowerCase() === 'present' || exp.endDate.toLowerCase() === 'now'
+                              ? 'text-green-400 font-semibold'
                               : ''
-                          }`}>
+                            }`}>
                             {formatDate(exp.endDate)}
                           </span>
                         </div>
@@ -723,7 +722,17 @@ export default function Home() {
                 delay={100}
                 splitType="words"
               />
-              <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-12"></div>
+
+              <MagneticButton strength={0.5}>
+                <a
+                  href="mailto:diassnorrman@gmail.com"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-purple-900 hover:bg-purple-950 text-white font-semibold rounded-full shadow-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400"
+                >
+                  <Mail className="w-5 h-5" />
+                  Contact via Email
+                </a>
+              </MagneticButton>
             </div>
           </div>
 
